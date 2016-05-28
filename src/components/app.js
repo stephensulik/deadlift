@@ -16,7 +16,7 @@ var user = {
     items: [],
     clickRate: 1
 },
-    items {
+    items = {
         1: {
             name: 'Wrist wraps',
             cost: 30,
@@ -72,16 +72,17 @@ export default class App extends React.Component {
         super(props);
 
         this.state = {
-            user
+            user: user,
+            items: items
         };
 
         this.addScore = this.addScore.bind(this);
         this.save = this.save.bind(this);
-
         this.tickRate = this.tickRate.bind(this);
 
         setInterval(this.tickRate, 1000);
     }
+
 
     tickRate() {
         var newUser = this.state.user;
